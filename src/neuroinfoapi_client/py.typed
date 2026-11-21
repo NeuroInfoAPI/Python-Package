@@ -1,0 +1,2 @@
+# Marker file (PEP 561): tells editors and type checkers that
+# this package ships its own type hints. Do not delete.

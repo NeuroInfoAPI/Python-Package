@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neuroinfoapi-client"
+version = "2.10.0"
+description = "Python client for NeuroInfoAPI: typed HTTP client (sync and async) and a WebSocket client with auto reconnect"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Appstun" }]
+requires-python = ">=3.10"
+dependencies = [
+  "httpx>=0.27",
+  "websockets>=14.1",
+  "typing_extensions>=4.10",
+]
+keywords = ["neuroinfoapi", "neuro-sama", "twitch", "api", "client", "websocket"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Framework :: AsyncIO",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "build"]
+
+[project.urls]
+Homepage = "https://neuroinfoapi.dev/api/docs"
+Documentation = "https://neuroinfoapi.dev/api/docs"
+Repository = "https://github.com/NeuroInfoAPI/Python-Package"
+Issues = "https://github.com/NeuroInfoAPI/Python-Package/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/neuroinfoapi_client"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.pyright]
+include = ["src", "examples", "tests"]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.10"
