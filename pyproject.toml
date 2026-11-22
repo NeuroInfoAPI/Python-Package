@@ -16,7 +16,7 @@ dependencies = [
   "websockets>=14.1",
   "typing_extensions>=4.10",
 ]
-keywords = ["neuroinfoapi", "neuro-sama", "twitch", "api", "client", "websocket"]
+keywords = ["neuro-sama", "neuroinfoapi", "neurosama", "vedal987"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Framework :: AsyncIO",
